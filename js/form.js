@@ -24,6 +24,9 @@ botao.addEventListener("click",function(e){
     tabela.appendChild(pacienteTr);
 
     form.reset();
+    
+    var apagaErro = document.querySelector("#mensagem-erro");
+    apagaErro.innerHTML = "";
 });
 
     function obtemPacienteFormulario(form){
@@ -78,12 +81,21 @@ botao.addEventListener("click",function(e){
             erros.push("A altura é inválida")
         }
 
+        if(paciente.nome.length == 0){
+            erros.push("Nome não pode ser em branco")
+        }
+
+        if(paciente.altura.length == 0){
+            erros.push("Altura não pode ser em branco")
+        }
+
         return erros;
     }
 
     function exibeMensagemErro(erro){   
         var ul = document.querySelector("#mensagem-erro");
         ul.classList.add("mensagem-erro");
+        ul.innerHTML = "";
         erro.forEach(function(erros){
             var li = document.createElement("li");
             li.textContent = erros;
