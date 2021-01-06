@@ -7,7 +7,10 @@ campoFiltro.addEventListener("input",function(){
         pacientes.forEach(function(paciente){
             var tdNome = paciente.querySelector(".info-nome");
             var nome = tdNome.textContent;
-           if(nome != campoFiltro.value){
+            // uso de expressao regular
+            var expressao = RegExp(campoFiltro.value,"i")// a string "i" , indica que é case Insensitive
+
+           if(!expressao.test(nome)){
             paciente.classList.add("invisivel");
            }else{
             paciente.classList.remove("invisivel");   
