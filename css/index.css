@@ -140,3 +140,7 @@ button[disabled=disabled], button:disabled {
 	font-size: 25px;
 	color: #ff0000;
 }
+.fadeOut{
+	opacity: 0;
+	transition: 0.5s;
+}
