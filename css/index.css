@@ -139,6 +139,7 @@ button[disabled=disabled], button:disabled {
 .mensagem-erro{
 	font-size: 25px;
 	color: #ff0000;
+	box-model: 
 }
 .fadeOut{
 	opacity: 0;
